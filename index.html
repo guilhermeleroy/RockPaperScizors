@@ -49,12 +49,7 @@
             console.log("Computer: " + score_comp);
         }
 
-        function game(){
-            for(let i = 0; i < 5; i++){
-                const playerSelection = getPlayerChoice();
-                const computerSelection = getComputerChoice();
-                console.log(playRound(playerSelection, computerSelection));
-            }
+        function finalLog() {
             console.log("FINAL SCORE: PLAYER = " + score_player + " WINS!   computer = " + score_comp + " wins.");
             if (score_player > score_comp) {
                 console.log("CONGRATULATIONS! YOU WON THE GAME!");
@@ -65,7 +60,15 @@
             else {
                 console.log("You lost. Better luck next time.");
             }
-            
+        }
+
+        function game(){
+            for(let i = 0; i < 5; i++){
+                const playerSelection = getPlayerChoice();
+                const computerSelection = getComputerChoice();
+                console.log(playRound(playerSelection, computerSelection));
+            }
+            finalLog();            
         }
 
         game();
